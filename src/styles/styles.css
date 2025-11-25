@@ -1,0 +1,493 @@
+/* -------------------------------------- */
+/* 1. CONFIGURACIÓN (VARIABLES Y FUENTES) */
+/* -------------------------------------- */
+
+/* 1.1 FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* 1.2 VARIABLES CSS (Root) */
+:root {
+    /* --- COLORES --- */
+    --color-title-blue: #000E42;
+    --color-gradient-start: rgb(232, 61, 129);
+    --color-gradient-end: rgb(43, 25, 151);
+    --color-pink-btn: #E83D81;
+    --color-dark-blue: #000642;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-default-bg: #F2F2F2;
+    --color-blue-btn: #201997;
+    --color-error-red: #EF4E4E;
+    --color-cancel-bg: #AD0626;
+    --color-green: #008000;
+    --color-grey: #A5A5A5;
+    --color-blue-btn-2: #6639E4;
+
+    /* --- GRADIENTES & SOMBRAS --- */
+    --gradient: linear-gradient(134.98deg, var(--color-pink-btn) 0%, var(--color-blue-btn) 142.29%);
+    --shadow-value: 0 0 10px var(--color-gradient-start), 0 0 20px var(--color-gradient-end), 0 0 30px rgba(83, 23, 87, 0.5);
+
+    /* --- TAMAÑOS DE ESPACIO (Rem/Em basados en 16px) --- */
+    --size-zero: 0px !important;
+    --size-small: 0.5em;        /* 8px */
+    --size-semismall: 0.8em;    /* 12px */
+    --size-default: 1em;        /* 16px */
+    --size-medium-small: 1.2em; /* 19px */
+    --size-medium: 1.5em;       /* 24px */
+    --size-large: 2em;          /* 32px */
+    --size-xl: 2.5em;           /* 40px */
+    --size-xxl: 3em;            /* 48px */
+    --max-width: 900px;
+}
+
+/* ---------------------------------- */
+/* 2. BASE (RESET Y ESTILOS GLOBALES) */
+/* ---------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-default-bg);
+    line-height: 1.6;
+    color: var(--color-dark-blue);
+}
+
+/* Estilos de Reflex (headings, text, link, button) */
+h1, h2, h3, h4, h5, h6, p, a, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: var(--size-default);
+    border-radius: var(--size-small);
+}
+
+/* ------------------------------- */
+/* 3. UTILIDADES (CLASES AISLADAS) */
+/* ------------------------------- */
+
+/* Pesos de Fuente */
+.font-regular { font-weight: 300; }
+.font-medium { font-weight: 500; }
+.font-bold { font-weight: 700; }
+
+.landing-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--size-default);
+}
+
+/*==================================*/
+/* 4. COMPONENTES */
+/*==================================*/
+
+/* ------------------- */
+/* 4.1. Index Page     */
+/* ------------------- */
+
+.index-page-container {
+    width: 100%;
+    min-height: 100vh;
+    color: var(--color-white); 
+    background-image: url("../assets/bg-contacto-scaled.jpg");
+    background-attachment: fixed;
+    display: grid;
+    grid-template-rows: auto auto auto; 
+}
+
+.index-page-container > :nth-child(1) { 
+    grid-row: 1; 
+}
+
+.index-page-container > :nth-child(2) { 
+    grid-row: 2;
+}
+
+.index-page-container > :nth-child(3) { 
+    grid-row: 3; 
+}
+
+.main-content-center {
+    grid-row: 2; 
+    display: flex;
+    justify-content: center;
+    padding: 1rem; 
+}
+
+.main-content-vstack {
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 15px;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* --------------------- */
+/* 4.2. Navbar y Botones */
+/* --------------------- */
+
+.navbar-container {
+    z-index: 999;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    height: 6rem;
+    border-bottom: 0.125rem dashed var(--color-white);
+    color: var(--color-white); 
+    justify-content: space-around; 
+}
+
+@media (min-width: 640px) {
+    .navbar-container {
+        justify-content: space-evenly; 
+    }
+}
+
+.navbar-logo-link {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-logo-link:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.navbar-logo {
+    width: 80px; 
+    height: auto;
+    object-fit: contain;
+}
+
+@media (min-width: 640px) {
+    .navbar-logo { width: 100px; }
+}
+
+@media (min-width: 1024px) {
+    .navbar-logo { width: 110px; }
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+@media (min-width: 640px) {
+    .navbar-links { gap: 3rem; }
+}
+
+.navbar-p {
+    font-size: var(--size-large);
+    font-weight: 300;
+}
+
+.navbar-link {
+    position: relative;
+    letter-spacing: 0.125rem;
+    color: var(--color-white); 
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block; 
+}
+
+.navbar-button {
+    background-color: transparent;
+    color: var(--color-white);
+    padding: var(--size-small) var(--size-default); 
+    border-radius: var(--size-small);
+    border: 0.125rem solid transparent; 
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-button:hover {
+    border: 0.125rem solid var(--color-white); 
+    background: var(--gradient); 
+    box-shadow: var(--shadow-value);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* ------------------- */
+/* 4.3. Header         */
+/* ------------------- */
+
+.header-container {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.header-title {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 2rem; 
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .header-title {
+        font-size: 3rem; 
+    }
+}
+
+.header-description {
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center; 
+    margin-top: 0;
+    margin-bottom: 1.5rem; 
+}
+
+@media (min-width: 768px) {
+    .header-description {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.header-info-flex {
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem; 
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 0 1rem; 
+    font-weight: 800;
+}
+
+@media (min-width: 600px) {
+    .header-info-flex {
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+}
+
+/* ------------------- */
+/* 4.4. Info Card      */
+/* ------------------- */
+
+.info-container {
+    display: flex;
+    font-size: 1rem;
+    font-family: sans-serif;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 0.5rem; 
+    align-items: baseline;
+}
+
+@media (min-width: 768px) {
+    .info-container {
+        width: auto;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+.info-title {
+    color: var(--color-blue-btn-2); /* #6639E4 */
+    font-weight: bold;
+    white-space: nowrap; 
+}
+
+.info-body {
+    color: #ccc; 
+}
+
+/* ------------------- */
+/* 4.5. Links          */
+/* ------------------- */
+
+.links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; 
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .links-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* ------------------- */
+/* 4.6. Link Card      */
+/* ------------------- */
+
+.link-card-anchor {
+    width: 100%;
+    text-decoration: none; 
+    display: block; 
+}
+
+.link-card-box {
+    width: 100%;
+    padding: 0.8rem; 
+    border-radius: 0.5rem; 
+    background-color: var(--color-gradient-end);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.link-card-box:hover {
+    background-color: var(--color-blue-btn-2);
+    box-shadow: 0 0px 10px var(--color-gradient-start); 
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.link-card-hstack {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.link-card-image {
+    display: none; 
+    width: 90px;
+    margin-right: 0.8rem;
+    border-radius: 0.25rem;
+    object-fit: cover;
+    height: 100%; 
+}
+
+@media (min-width: 600px) {
+    .link-card-image { display: block; }
+}
+
+.link-card-vstack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1; 
+}
+
+.link-card-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: white; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0; 
+    width: 100%; 
+}
+
+.link-card-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8); 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    margin: 0; 
+    line-height: 1.4;
+}
+
+/* ------------------- */
+/* 4.7. Link Button    */
+/* ------------------- */
+
+.link-btn-anchor {
+    width: 100%;
+    align-items: flex-start;
+    display: flex; 
+    text-decoration: none;
+}
+
+.link-btn-button {
+    justify-content: flex-start;
+    gap: 0.8rem; 
+    width: 100%;
+    background-color: var(--color-dark-blue); 
+    border: none;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.link-btn-button:hover {
+    background-color: var(--color-black);
+    box-shadow: var(--shadow-value); 
+    transform: translateY(-2px);
+}
+
+.link-btn-icon {
+    font-size: 18px; 
+    color: white; 
+    line-height: 1; 
+}
+
+.link-btn-text {
+    font-size: 1rem;
+    line-height: 1; 
+}
+
+/* ------------------- */
+/* 4.8. Footer */
+/* ------------------- */
+
+.footer-container {
+    width: 100%;
+    border-top: 0.125rem dashed white; 
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 1rem 0; 
+}
+
+.footer-content {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem; 
+    margin: 0.8rem; 
+}
+
+.footer-logo {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle; 
+}
+
+.footer-text {
+    margin: 0; 
+    font-size: 0.9rem; 
+    color: white; 
+}
