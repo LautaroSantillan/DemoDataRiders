@@ -5,7 +5,7 @@ const LinkCard = ({ url, image, title, description }) => {
     return (
         <a 
             href={url}
-            target="_blank" // is_external=True
+            target="_blank"
             rel="noopener noreferrer" 
             className="link-card-anchor"
         >

@@ -4,8 +4,9 @@ import '../styles/styles.css';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Links from '../components/Links';
-import Header from '../views/header'; 
-import { INDEX_TITLE, INDEX_DESCRIPTION, INDEX_META, Lang } from '../utils/utils';
+import Header from '../views/header';
+import { Lang } from '../utils/utils.js';
+import { INDEX_TITLE, INDEX_DESCRIPTION, INDEX_META } from '../utils/utils';
 // -----------------------------------------------------------------
 const IndexPage = () => {
     return (
@@ -19,6 +20,7 @@ const IndexPage = () => {
                     return <meta key={index} {...metaProps} />;
                 })}
             </Helmet>
+            <Lang />
             <div className="index-page-container">
                 <Navbar />
                 <div className="main-content-center">
