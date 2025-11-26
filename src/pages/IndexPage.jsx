@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import '../styles/styles.css';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
-import Links from '../components/Links';
+import Links from '../components/links.jsx';
 import Header from '../views/header';
 import { Lang } from '../utils/utils.js';
 import { INDEX_TITLE, INDEX_DESCRIPTION, INDEX_META } from '../utils/utils';
