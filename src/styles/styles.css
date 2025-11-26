@@ -38,6 +38,12 @@
     --size-xl: 2.5em;           /* 40px */
     --size-xxl: 3em;            /* 48px */
     --max-width: 1100px;
+
+    /* Pesos de Fuente */
+    --font-regular: 300;
+    --font-medium: 500;
+    --font-bold: 700;
+    --font-xlarge: 900;
 }
 
 /* ---------------------------------- */
@@ -79,11 +85,6 @@ button {
 /* 3. UTILIDADES (CLASES AISLADAS) */
 /* ------------------------------- */
 
-/* Pesos de Fuente */
-.font-regular { font-weight: 300; }
-.font-medium { font-weight: 500; }
-.font-bold { font-weight: 700; }
-
 .landing-container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -120,7 +121,7 @@ button {
     grid-row: 3; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 378px) {
     .navbar-container, .main-content-center, .footer-container {
         width: 90% !important;
     }
@@ -202,7 +203,7 @@ button {
 
 .navbar-p {
     font-size: var(--size-large);
-    font-weight: 300;
+    font-weight: var(--font-regular);
 }
 
 .navbar-link {
@@ -248,30 +249,31 @@ button {
     text-align: center;
     font-weight: bold;
     font-family: sans-serif;
-    font-size: 2rem; 
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--size-large); 
+    margin-top: var(--size-small);
+    margin-bottom: var(--size-small);
 }
 
 @media (min-width: 768px) {
     .header-title {
-        font-size: 3rem; 
+        font-size: var(--size-xxl); 
     }
 }
 
 .header-description {
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: var(--size-medium-small);
+    font-weight: var(--font-medium);
     font-family: sans-serif;
     padding-left: 20px;
     padding-right: 20px;
     text-align: center; 
-    margin-top: 0;
-    margin-bottom: 1.5rem; 
+    margin-top: var(--size-zero);
+    margin-bottom: var(--size-medium); 
 }
 
 @media (min-width: 768px) {
     .header-description {
+        font-size: var(--size-medium);
         padding-left: 30px;
         padding-right: 30px;
     }
@@ -280,12 +282,12 @@ button {
 .header-info-flex {
     width: 100%;
     justify-content: center;
-    gap: 1.5rem; 
+    gap: var(--size-medium); 
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
     padding: 0 1rem; 
-    font-weight: 800;
+    font-weight: var(--font-xlarge);
 }
 
 @media (min-width: 600px) {
@@ -302,12 +304,12 @@ button {
 
 .info-container {
     display: flex;
-    font-size: 1rem;
+    font-size: var(--size-default);
     font-family: sans-serif;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    gap: 1rem;
+    gap: var(--size-default);
     justify-content: center;
 }
 
@@ -321,7 +323,7 @@ button {
 
 .info-title {
     color: var(--color-blue-btn-2);
-    font-weight: bold;
+    font-weight: var(--font-xlarge);
     white-space: nowrap; 
 }
 
@@ -339,7 +341,7 @@ button {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem; 
+    gap: var(--size-semismall); 
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -364,12 +366,12 @@ button {
 
 .link-card-box {
     width: 100%;
-    padding: 0.8rem; 
-    border-radius: 0.5rem; 
+    padding: var(--size-semismall); 
+    border-radius: var(--size-small); 
     background-color: var(--color-gradient-end);
     transition: all 0.3s ease-in-out;
     position: relative;
-    font-size: 0.95rem;
+    font-size: var(--size-default);
 }
 
 .link-card-box:hover {
@@ -389,7 +391,7 @@ button {
 .link-card-image {
     display: none; 
     width: 90px;
-    margin-right: 0.8rem;
+    margin-right: var(--size-semismall);
     border-radius: 0.25rem;
     object-fit: cover;
     height: 100%; 
@@ -409,38 +411,35 @@ button {
 
 .link-card-title {
     font-size: 1.125rem;
-    font-weight: bold;
-    color: white; 
+    font-weight: var(--font-xlarge);
+    color: var(--color-white); 
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 0; 
+    margin-bottom: 10px; 
     width: 100%; 
 }
 
 .link-card-description {
-    font-size: 0.9rem;
+    font-size: var(--size-default);
     color: rgba(255, 255, 255, 0.8); 
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; 
     margin: 0; 
     line-height: 1.4;
+    white-space: normal;
 }
 
 @media (min-width: 768px) {
     .link-card-box {
-        padding: 1.2rem;
-        font-size: 1rem;
+        padding: var(--size-medium-small);
+        font-size: var(--size-default);
     }
     
     .link-card-title {
-        font-size: 1.25rem; 
+        font-size: var(--size-medium-small); 
     }
 
     .link-card-description {
-        font-size: 1rem; 
+        font-size: var(--size-default); 
     }
 }
 
@@ -457,12 +456,12 @@ button {
 
 .link-btn-button {
     justify-content: flex-start;
-    gap: 0.8rem; 
+    gap: var(--size-semismall); 
     width: 100%;
     background-color: var(--color-dark-blue); 
     border: none;
     padding: 0.8rem 1rem;
-    color: white;
+    color: var(--color-white);
     text-align: left;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -478,17 +477,17 @@ button {
 
 .link-btn-icon {
     font-size: 18px; 
-    color: white; 
+    color: var(--color-white); 
     line-height: 1; 
 }
 
 .link-btn-text {
-    font-size: 1rem;
+    font-size: var(--size-default);
     line-height: 1; 
 }
 
 /* ------------------- */
-/* 4.8. Footer */
+/* 4.8. Footer         */
 /* ------------------- */
 
 .footer-container {
@@ -505,8 +504,8 @@ button {
 .footer-content {
     display: flex;
     align-items: center; 
-    gap: 0.5rem; 
-    margin: 0.8rem; 
+    gap: var(--size-small); 
+    margin: var(--size-semismall); 
 }
 
 .footer-logo {
@@ -516,7 +515,7 @@ button {
 }
 
 .footer-text {
-    margin: 0; 
-    font-size: 0.9rem; 
-    color: white; 
+    margin: var(--size-zero); 
+    font-size: var(--size-default); 
+    color: var(--color-white); 
 }
