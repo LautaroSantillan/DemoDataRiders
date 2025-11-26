@@ -6,12 +6,12 @@ import ROBOTIMG from '../assets/robotIA.jpg';
 import ERRORIMG from '../assets/error-404.jpg';
 
 const linksData = [
-    { 
+    /*{ 
         url: "https://docs.google.com/spreadsheets/d/1Nz9NeWJLAWMZSiTuRY2tL-nuwYgO02eqCttDNcZvNwY/edit?gid=0#gid=0", 
         image: CREDENCIAL, 
         title: "Excel Base", 
         description: "Excel con todas las demos y keys (credenciales) para las distintas demos." 
-    },
+    },*/
     { 
         url: "https://gmfftfm9mn.us-east-1.awsapprunner.com/", 
         image: ROBOTIMG, 
