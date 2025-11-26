@@ -13,8 +13,8 @@ const Header = () => {
             </p>
             <div className="header-info-flex">
                 <Info title="+15" body="años de experiencia" />
-                <Info title="+..." body="cantidad de proyectos" />
-                <Info title="+..." body="clientes satisfechos" />
+                <Info title="+328" body="proyectos realizados" />
+                <Info title="+153" body="clientes satisfechos" />
             </div>
         </div>
     );
