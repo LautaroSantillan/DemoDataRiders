@@ -12,9 +12,9 @@ const Header = () => {
                 Decisiones inteligentes que transforman tu negocio. Tomá decisiones basadas en datos y elevá tu empresa al siguiente nivel.
             </p>
             <div className="header-info-flex">
-                <Info title="+15" body="años de experiencia" />
-                <Info title="+328" body="proyectos realizados" />
-                <Info title="+153" body="clientes satisfechos" />
+                <Info title="15" body="años de experiencia" />
+                <Info title="300" body="proyectos realizados" />
+                <Info title="150" body="clientes satisfechos" />
             </div>
         </div>
     );
